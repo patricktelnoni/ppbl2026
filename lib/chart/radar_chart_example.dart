@@ -23,10 +23,11 @@ class RadarchartExample extends StatelessWidget{
                 entryRadius: 3,
                 dataEntries: const [
                   RadarEntry(value: 4),
-                  RadarEntry(value: 3),
+                  RadarEntry(value: 6),
                   RadarEntry(value: 5),
                   RadarEntry(value: 4),
-                  RadarEntry(value: 2),
+                  RadarEntry(value: 7),
+                  RadarEntry(value: 8),
                 ],
                 borderWidth: 2,
               ),

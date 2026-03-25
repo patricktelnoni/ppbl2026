@@ -9,7 +9,7 @@ ScatterChartData sampleScatterData() {
       ScatterSpot(2, 13),
       ScatterSpot(4, 7),
       ScatterSpot(6, 3),
-      ScatterSpot(11, 6),
+      ScatterSpot(17, 6),
     ],
     minX: 0,
     maxX: 15,

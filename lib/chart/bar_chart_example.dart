@@ -16,6 +16,7 @@ class BarChartExample extends StatelessWidget{
         child: BarChart(
           BarChartData(
             barGroups: [
+
               BarChartGroupData(
                   x: 1,
                   barRods: [

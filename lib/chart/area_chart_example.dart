@@ -16,30 +16,27 @@ class AreaChartExample extends StatelessWidget {
           padding: const EdgeInsets.all(16.0),
           child: LineChart(
             LineChartData(
-
               lineBarsData: [
                 LineChartBarData(
                   spots: [
-                    FlSpot(0, 4),
+                    FlSpot(0, 8),
                     FlSpot(1, 5),
-                    FlSpot(2, 4),
-                    FlSpot(3, 6),
-
+                    FlSpot(2, 6),
+                    FlSpot(3, 7),
                   ],
                   isCurved: false, // For smoother curves
                   barWidth: 2,
                   belowBarData: BarAreaData( // For the area fill
                     show: true,
                     color: Colors.blue, // Shading color
-
                   ),
                 ),
                 LineChartBarData(
                   spots: [
-                    FlSpot(0, 3),
+                    FlSpot(0, 4),
                     FlSpot(1, 3),
-                    FlSpot(2, 3),
-                    FlSpot(3, 9),
+                    FlSpot(2, 4),
+                    FlSpot(3, 5),
 
                   ],
                   isCurved: false, // For smoother curves

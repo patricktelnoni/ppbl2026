@@ -30,7 +30,7 @@ class _PieChartExampleState extends State<PieChartExample> {
           },
         ),
         sectionsSpace: 0, // Space between sections
-        centerSpaceRadius: 40, // Radius of the empty space in the center
+        centerSpaceRadius: 20, // Radius of the empty space in the center
         sections: showingSections(), // Define your pie chart sections
       ),
     );

@@ -17,11 +17,17 @@ class ChartExample extends StatelessWidget{
             lineBarsData: [
               LineChartBarData(
                 spots: const [
-                  // ambil dari rest api
+                  // ambil data dari database atau rest api
+                  FlSpot(0, 1),
+                  FlSpot(1, 3),
+                  FlSpot(2, 2),
+                  FlSpot(3, 5),
+                  FlSpot(4, 3),
+                  FlSpot(5, 4),
                 ],
-                isCurved: false,
-                barWidth: 2,
-                color: Colors.yellow,
+                isCurved: true,
+                barWidth: 4,
+                color: Colors.blueAccent,
 
               ),
             ],
