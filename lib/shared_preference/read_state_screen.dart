@@ -3,7 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 Future<String> readData() async {
   final SharedPreferences prefs = await SharedPreferences.getInstance();
-  final String? username = prefs.getString('password');
+  final String? username = prefs.getString('username');
 
   return username ?? 'Tidak ada data';
 }
