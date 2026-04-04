@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'buku.dart';
-import 'koneksi.dart';
 
 class DetailBuku extends StatefulWidget {
   final Buku buku;
