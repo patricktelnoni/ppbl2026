@@ -34,12 +34,11 @@ class InputBuku extends StatelessWidget {
             TextButton(
                 onPressed: (){
                   final buku = Buku(
-                    nama_buku: _namaBukuController.text,
-                    isbn: int.parse(_isbnController.text),
+                    nama_buku  : _namaBukuController.text,
+                    isbn       : int.parse(_isbnController.text),
                   );
 
-                  BukuQueryHandler()
-                      .tambahBuku(_namaBukuController.text, int.parse(_isbnController.text));
+                  BukuQueryHandler().tambahBuku(buku);
 
                   _namaBukuController.clear();
                   _isbnController.clear();
@@ -51,7 +50,13 @@ class InputBuku extends StatelessWidget {
                 context,
                 MaterialPageRoute(builder: (context) => ListBuku()),
               );
-            }, child: Text("Lihat Buku"))
+            }, child: Text("Lihat Buku")),
+            TextButton(onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => ListBuku()),
+              );
+            }, child: Text("Input Rekening")),
           ],
         ),
       ),

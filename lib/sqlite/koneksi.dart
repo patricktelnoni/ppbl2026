@@ -7,7 +7,7 @@ import 'buku.dart';
 Future<Database> openDb() async{
   final database = await openDatabase(
     'database_perpustakaan',
-    version:  3,
+    version:  6,
     onCreate: (db, version) async{
       db.execute('''
           CREATE TABLE buku (
@@ -20,11 +20,11 @@ Future<Database> openDb() async{
       onUpgrade: (db, oldVersion, newVersion) async{
         if (oldVersion < 2) {
           db.execute('''
-          CREATE TABLE penerbit (
-            penerbitid INTEGER PRIMARY KEY AUTOINCREMENT,
-            nama_penerbit TEXT NOT NULL,
-            alamat TEXT NOT NULL
-          )
+            CREATE TABLE penerbit (
+              penerbitid INTEGER PRIMARY KEY AUTOINCREMENT,
+              nama_penerbit TEXT NOT NULL,
+              alamat TEXT NOT NULL
+            )
           ''');
         }
 
@@ -34,6 +34,31 @@ Future<Database> openDb() async{
             pengarangid INTEGER PRIMARY KEY AUTOINCREMENT,
             nama_pengarang TEXT NOT NULL
           )
+          ''');
+        }
+
+        if (oldVersion < 4) {
+          db.execute('''
+            CREATE TABLE kategori (
+              kategoriid INTEGER PRIMARY KEY AUTOINCREMENT,
+              nama_kategori TEXT NOT NULL
+            )
+          ''');
+        }
+
+        if (oldVersion < 5) {
+          db.execute('''
+            ALTER TABLE buku ADD COLUMN penerbitid INTEGER REFERENCES penerbit(penerbitid) DEFAULT NULL;;
+          ''');
+        }
+
+        if (oldVersion < 6) {
+          db.execute('''
+            CREATE TABLE rekening (
+              nomor_rekening INTEGER PRIMARY KEY AUTOINCREMENT,
+              userid INTEGER NOT NULL,
+              saldo REAL NOT NULL
+            )
           ''');
         }
 
@@ -47,27 +72,21 @@ Future<Database> openDb() async{
   return database;
 }
 
-class PenerbitQueryHandler{
-  Future<Database> database() async {
-    return openDb();
-  }
-}
-// mysqli_query($conn, "SELECT * FROM buku")
-
 class BukuQueryHandler{
   Future<Database> database() async {
     return openDb();
   }
-  // function tambahBuku($nama_buku, $isbn)
-  //{
-   //  mysqli_query($conn, "INSERT INTO buku (nama_buku, isbn) VALUES ('$nama_buku', $isbn)")
-  // }
-  Future<int> tambahBuku(String nama_buku, int isbn) async{
+
+  /* function tambahBuku($nama_buku, $isbn){
+    $sql = "INSERT INTO buku (nama_buku, isbn) VALUES ('$nama_buku', $isbn)";
+  }
+   */
+  Future<int> tambahBuku(Buku buku) async{
     final db = await database();
     //"INSERT INTO buku (nama_buku, isbn) VALUES ('$nama_buku', $isbn)"
     final id = await db.rawInsert(
       'INSERT INTO buku (nama_buku, isbn) VALUES (?, ?)',
-      [nama_buku, isbn]
+      [buku.nama_buku, buku.isbn]
     );
     return id;
   }

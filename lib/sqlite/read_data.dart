@@ -28,7 +28,6 @@ class _ListBukuState extends State<ListBuku> {
             return Text('Error: ${snapshot.error}');
           } else {
               daftarBuku = snapshot.data!;
-
               return ListView.builder(
                   itemCount: daftarBuku.length,
                   itemBuilder: (context, index){
