@@ -2,7 +2,6 @@ import 'koneksi.dart';
 import 'package:sqflite/sqflite.dart';
 import 'rekening.dart';
 
-
 class RekeningQueryHandler{
   Future<Database> database() async {
     return openDb();
@@ -36,6 +35,7 @@ class RekeningQueryHandler{
 
   Future<void> safeTransfer(int senderId, int receiverId, double amount) async {
     final db = await database();
+
     await db.transaction((txn) async{
       await txn.rawUpdate(
         'UPDATE rekening SET saldo = saldo - ? WHERE nomor_rekening = ?',
