@@ -28,6 +28,12 @@ class RekeningQueryHandler{
 
   }
 
+  Future<double> bacaSaldo(int nomorRekening) async{
+    final db = await database();
+    List<Map<String, Object?>> result = await db.rawQuery("SELECT saldo FROM rekening where nomor_rekening = ?", [nomorRekening]);
+    return result.first['saldo'] as double;
+  }
+
   Future<void> safeTransfer(int senderId, int receiverId, double amount) async {
     final db = await database();
     await db.transaction((txn) async{
