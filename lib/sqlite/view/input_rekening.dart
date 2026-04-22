@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'rekening_handler.dart';
+import '../transaction/rekening_handler.dart';
 
 class InputRekening extends StatefulWidget {
   const InputRekening({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'penerbit.dart';
+import '../dao/penerbit.dart';
 import 'koneksi.dart';
 import 'package:sqflite/sqflite.dart';
 

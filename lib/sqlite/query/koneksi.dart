@@ -1,6 +1,6 @@
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
-import 'buku.dart';
+import '../dao/buku.dart';
 
 // $conn = mysqli_connect('localhost', 'root', '', 'perpustakaan')
 

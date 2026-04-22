@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'koneksi.dart';
-import 'buku.dart';
+import '../query/koneksi.dart';
+import '../dao/buku.dart';
 import 'read_data.dart';
 
 class InputBuku extends StatelessWidget {

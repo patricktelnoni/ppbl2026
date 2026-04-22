@@ -1,6 +1,6 @@
-import 'koneksi.dart';
+import '../query/koneksi.dart';
 import 'package:sqflite/sqflite.dart';
-import 'rekening.dart';
+import '../dao/rekening.dart';
 
 class RekeningQueryHandler{
   Future<Database> database() async {

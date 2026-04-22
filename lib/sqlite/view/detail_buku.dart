@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'buku.dart';
+import '../dao/buku.dart';
 
 class DetailBuku extends StatefulWidget {
   final Buku buku;

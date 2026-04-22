@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'buku.dart';
-import 'koneksi.dart';
+import '../dao/buku.dart';
+import '../query/koneksi.dart';
 import 'detail_buku.dart';
 
 class ListBuku extends StatefulWidget {
