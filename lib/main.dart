@@ -6,6 +6,7 @@ import 'package:ppbl2026/chart/bar_chart_example.dart';
 import 'package:ppbl2026/chart/line_chart_example.dart';
 import 'package:ppbl2026/chart/pie_chart_example.dart';
 import 'package:ppbl2026/chart/scatter_chart_example.dart';
+import 'package:ppbl2026/navigation/routes.dart';
 import 'package:ppbl2026/shared_preference/form_input.dart';
 import 'package:ppbl2026/sqlite/view/form_input.dart';
 import 'package:ppbl2026/sqlite/view/input_rekening.dart';
@@ -29,8 +30,8 @@ void main()   {
         ChangeNotifierProvider(create: (context) => KeranjangProvider()),
         ChangeNotifierProvider(create: (context) => WishlistProvider()),
       ],
-      child: MaterialApp(
-        home: InputRekening(),
+      child: MaterialApp.router(
+        routerConfig: appRoute,
       ), // The widget tree that needs access to the providers
     ),
 
