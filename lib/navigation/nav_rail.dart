@@ -23,7 +23,6 @@ class _NavRailState extends State<NavRail> {
       ),
       body: Row(
         children: <Widget>[
-
           // create a navigation rail
           NavigationRail(
             selectedIndex: _selectedIndex,

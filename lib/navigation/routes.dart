@@ -5,7 +5,7 @@ import 'package:ppbl2026/navigation/nav_go_router.dart';
 import 'package:ppbl2026/navigation/nav_rail.dart';
 import 'package:ppbl2026/navigation/nav_sidebar.dart';
 
-final GoRouter appRoute = GoRouter(
+final GoRouter routeList = GoRouter(
   initialLocation: '/',
   routes: [
     GoRoute(
@@ -20,6 +20,7 @@ final GoRouter appRoute = GoRouter(
         return DetailScreen(id: id);
       },
     ),
+
     GoRoute(
         path: '/sidebar',
         builder: (context, state){
@@ -33,6 +34,7 @@ final GoRouter appRoute = GoRouter(
         return NavRail();
       }
     ),
+
     GoRoute(
       // /search?q=keyword&sort=kriteria
       path: '/search',

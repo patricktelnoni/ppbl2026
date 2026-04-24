@@ -10,7 +10,6 @@ class SideBarExample extends StatefulWidget{
 }
 
 class _SideBarExampleState extends State{
-
   int _selectedIndex = 0;
 
   void _onChangeNavigation(int index){
@@ -31,12 +30,10 @@ class _SideBarExampleState extends State{
       body: Row(
           children:[
             SidebarX(
-              extendedTheme: const SidebarXTheme(
-      width: 200,
-
-      ),
+                extendedTheme: const SidebarXTheme(
+                  width: 150,
+                ),
                 theme:SidebarXTheme(
-
                     selectedItemDecoration: BoxDecoration(
                       color: Colors.blue,
                       borderRadius: BorderRadius.circular(10),
@@ -46,7 +43,6 @@ class _SideBarExampleState extends State{
                 items: [
                   SidebarXItem(icon: Icons.home, label: 'Home', onTap: () =>_onChangeNavigation(0)),
                   SidebarXItem(icon: Icons.search, label: 'Search', onTap: () =>_onChangeNavigation(1)),
-
                 ]
             ),
           ]

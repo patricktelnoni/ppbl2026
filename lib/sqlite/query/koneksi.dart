@@ -17,7 +17,7 @@ Future<Database> openDb() async{
           )
           ''');
     },
-      onUpgrade: (db, oldVersion, newVersion) async{
+    onUpgrade: (db, oldVersion, newVersion) async{
         if (oldVersion < 2) {
           db.execute('''
             CREATE TABLE penerbit (
@@ -63,7 +63,7 @@ Future<Database> openDb() async{
         }
 
       },
-      onDowngrade: (db, oldVersion, newVersion) async{
+    onDowngrade: (db, oldVersion, newVersion) async{
         await db.execute('DROP TABLE IF EXISTS penerbit');
         await db.execute('DROP TABLE IF EXISTS buku');
         await openDb();
