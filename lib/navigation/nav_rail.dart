@@ -32,7 +32,7 @@ class _NavRailState extends State<NavRail> {
               });
             },
             labelType: NavigationRailLabelType.selected,
-            backgroundColor: Colors.green,
+            backgroundColor: Colors.blueAccent,
             destinations: const <NavigationRailDestination>
             [
               // navigation destinations

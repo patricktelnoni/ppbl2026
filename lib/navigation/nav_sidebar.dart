@@ -31,18 +31,19 @@ class _SideBarExampleState extends State{
           children:[
             SidebarX(
                 extendedTheme: const SidebarXTheme(
-                  width: 150,
+                  width: 110,
                 ),
                 theme:SidebarXTheme(
                     selectedItemDecoration: BoxDecoration(
                       color: Colors.blue,
-                      borderRadius: BorderRadius.circular(10),
+                      borderRadius: BorderRadius.circular(5),
                     )
                 ),
                 controller: SidebarXController(selectedIndex: _selectedIndex, extended:true),
                 items: [
                   SidebarXItem(icon: Icons.home, label: 'Home', onTap: () =>_onChangeNavigation(0)),
                   SidebarXItem(icon: Icons.search, label: 'Search', onTap: () =>_onChangeNavigation(1)),
+                  SidebarXItem(icon: Icons.flight_class_sharp, label: 'Flight', onTap: () =>_onChangeNavigation(2)),
                 ]
             ),
           ]

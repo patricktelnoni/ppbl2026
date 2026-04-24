@@ -22,6 +22,17 @@ final GoRouter routeList = GoRouter(
     ),
 
     GoRoute(
+      // /search?q=keyword&sort=kriteria
+      path: '/search',
+      builder: (context, state) {
+        final searchTerm = state.uri.queryParameters['q'] ?? '';
+        final sortBy = state.uri.queryParameters['sort'] ?? 'relevance';
+
+        return Searchscreen(query: searchTerm, sort: sortBy);
+      },
+    ),
+
+    GoRoute(
         path: '/sidebar',
         builder: (context, state){
           return SideBarExample();
@@ -35,15 +46,6 @@ final GoRouter routeList = GoRouter(
       }
     ),
 
-    GoRoute(
-      // /search?q=keyword&sort=kriteria
-      path: '/search',
-      builder: (context, state) {
-        final searchTerm = state.uri.queryParameters['q'] ?? '';
-        final sortBy = state.uri.queryParameters['sort'] ?? 'relevance';
 
-        return Searchscreen(query: searchTerm, sort: sortBy);
-      },
-    ),
   ],
 );

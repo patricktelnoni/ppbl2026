@@ -15,16 +15,16 @@ class NavGoRouter extends StatelessWidget {
           children: [
             Text("Halaman indeks"),
             ElevatedButton(
-                onPressed: () => context.go("/details/10"),
+                onPressed: () => context.go("/details/16"),
                 child: Text("Pindah")
             ),
             ElevatedButton(
-                onPressed: () => context.go("/search?q=Flutter Lanjutan&sort=age"),
+                onPressed: () => context.go("/search?q=Mobile Lanjutan&sort=age"),
                 child: Text("Search")
             ),
             ElevatedButton(
                 onPressed: () => context.go("/sidebar"),
-                child: Text("Navigation Bar")
+                child: Text("Navigation Drawer")
             ),
             ElevatedButton(
                 onPressed: () => context.go("/navrail"),
@@ -39,6 +39,7 @@ class NavGoRouter extends StatelessWidget {
         destinations: const [
           NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
           NavigationDestination(icon: Icon(Icons.business), label: 'Business'),
+          NavigationDestination(icon: Icon(Icons.airplane_ticket_rounded), label: 'Flight'),
         ],
       ),
     );
