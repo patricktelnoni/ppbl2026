@@ -20,7 +20,7 @@ import 'chart/radar_chart_example.dart';
 import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import 'package:sqflite_common_ffi_web/sqflite_ffi_web.dart';
 import 'package:ppbl2026/navigation/routes.dart';
-
+import 'package:ppbl2026/theme/theme_file.dart';
 void main()   {
 
   runApp(
@@ -31,9 +31,11 @@ void main()   {
         ChangeNotifierProvider(create: (context) => WishlistProvider()),
       ],
       child: MaterialApp.router(
-        routerConfig: routeList
+        routerConfig: routeList,
+        theme: darkTheme,
+        ),
       ), // The widget tree that needs access to the providers
-    ),
+
 
   );
 }

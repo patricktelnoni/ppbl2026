@@ -4,13 +4,15 @@ import 'package:ppbl2026/navigation/detail.dart';
 import 'package:ppbl2026/navigation/nav_go_router.dart';
 import 'package:ppbl2026/navigation/nav_rail.dart';
 import 'package:ppbl2026/navigation/nav_sidebar.dart';
+import 'package:ppbl2026/theme/adaptive_layout.dart';
+import 'package:ppbl2026/theme/custom_theme.dart';
 
 final GoRouter routeList = GoRouter(
   initialLocation: '/',
   routes: [
     GoRoute(
       path: '/',
-      builder: (context, state) => const NavGoRouter(),
+      builder: (context, state) => const AdaptiveLayout(),
     ),
     // Route with a path parameter (:id)
     GoRoute(
