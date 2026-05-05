@@ -32,7 +32,7 @@ void main()   {
       ],
       child: MaterialApp.router(
         routerConfig: routeList,
-        theme: darkTheme,
+        theme: lightTheme,
         ),
       ), // The widget tree that needs access to the providers
 
