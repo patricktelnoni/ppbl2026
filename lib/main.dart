@@ -21,6 +21,7 @@ import 'package:sqflite_common_ffi/sqflite_ffi.dart';
 import 'package:sqflite_common_ffi_web/sqflite_ffi_web.dart';
 import 'package:ppbl2026/navigation/routes.dart';
 import 'package:ppbl2026/theme/theme_file.dart';
+import 'package:google_fonts/google_fonts.dart';
 void main()   {
 
   runApp(
@@ -33,6 +34,9 @@ void main()   {
       child: MaterialApp.router(
         routerConfig: routeList,
         theme: lightTheme,
+        darkTheme: darkTheme,
+        themeMode: ThemeMode.system,
+        debugShowCheckedModeBanner: false,
         ),
       ), // The widget tree that needs access to the providers
 

@@ -12,6 +12,7 @@ class ListBuku extends StatefulWidget {
 
 class _ListBukuState extends State<ListBuku> {
   List<Buku> daftarBuku = [];
+  bool showTrailing = false;
 
   @override
   Widget build(BuildContext context) {
@@ -35,6 +36,15 @@ class _ListBukuState extends State<ListBuku> {
                     return ListTile(
                       title: Text(buku.nama_buku),
                       subtitle: Text(buku.isbn.toString()),
+                      trailing: showTrailing ? const Icon(Icons.favorite_border) : const SizedBox.shrink(),
+                      onLongPress: (){
+                        setState(() {
+                          if(showTrailing)
+                            showTrailing = false;
+                          else
+                            showTrailing = true;
+                        });
+                      },
                       onTap: (){
                         Navigator.push(
                           context,

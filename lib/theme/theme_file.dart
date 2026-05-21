@@ -53,8 +53,10 @@ ThemeData lightTheme = ThemeData(
 ThemeData darkTheme = ThemeData(
   brightness: Brightness.dark,
   primarySwatch: Colors.indigo,
+  navigationRailTheme: NavigationRailThemeData(
+    backgroundColor: Colors.redAccent
+  ),
   bottomNavigationBarTheme: BottomNavigationBarThemeData(
-
     backgroundColor: Colors.blue,
     selectedItemColor: Colors.orange,
     unselectedItemColor: Colors.white54,
@@ -70,10 +72,9 @@ ThemeData darkTheme = ThemeData(
       color: Colors.white,
     ),
   ),
-
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.deepPurple,
       foregroundColor: Colors.white,
     ),
   ),

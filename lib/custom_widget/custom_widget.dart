@@ -9,6 +9,7 @@ class CustomWidgetExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // komponen / custom widget
     return Scaffold(
       appBar: AppBar(
         title: Text("Contoh custom widget"),
@@ -28,13 +29,22 @@ class CustomWidgetExample extends StatelessWidget {
           color: Colors.green,
           iconData: Icons.flight,
         ),
+        StatusBadge(
+          text: "Contoh ketiga",
+          color: Colors.redAccent,
+          iconData: Icons.traffic,
+        ),
         CustomListviewCard(
             title: "Contoh listview Card",
             icon: Icons.eleven_mp_rounded,
             img: 'https://picsum.photos/250?image=9'),
         FollowButton(
             platform: "TikTok",
-            onPressed: (){print("Hello world");}
+            onPressed: (){print("Hello Tiktok");}
+        ),
+        FollowButton(
+            platform: "Youtube",
+            onPressed: (){print("Hello Youtube");}
         )
       ],)
         ,

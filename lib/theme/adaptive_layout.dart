@@ -67,38 +67,58 @@ class _AdaptiveLayoutState extends State<AdaptiveLayout> {
   _buildTabletLayout() {
     return OrientationBuilder(
         builder: (context, orientation){
-          return GridView.builder(
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: orientation == Orientation.portrait ? 2 : 4,
-                crossAxisSpacing: 16.0,
-                mainAxisSpacing: 16.0,
+          return Row(
+            spacing: 10.0,
+            children: [
+              NavigationRail(
+                selectedIndex: 1,
+                onDestinationSelected: (int index) {
+
+                },
+                labelType: NavigationRailLabelType.all,
+                destinations: const [
+                  NavigationRailDestination(icon: Icon(Icons.home), label: Text('Home')),
+                  NavigationRailDestination(icon: Icon(Icons.favorite), label: Text('Likes')),
+                  NavigationRailDestination(icon: Icon(Icons.settings), label: Text('Settings')),
+                ],
               ),
-              itemBuilder: (context, index) {
-                return Card(
-                  clipBehavior: Clip.antiAlias,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Expanded(
-                        child: Image.network(
-                          'https://picsum.photos/id/${index + 10}/400/300',
-                          fit: BoxFit.cover,
-                          errorBuilder: (context, error, stackTrace) =>
-                          const Icon(Icons.image_not_supported),
+              const VerticalDivider(thickness: 1, width: 1),
+              Expanded(
+                  child: GridView.builder(
+                    gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: orientation == Orientation.portrait ? 1 : 4,
+                      crossAxisSpacing: 16.0,
+                      mainAxisSpacing: 16.0,
+                    ),
+                    itemBuilder: (context, index) {
+                      return Card(
+                        clipBehavior: Clip.antiAlias,
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            Expanded(
+                              child: Image.network(
+                                'https://picsum.photos/id/${index + 10}/400/300',
+                                fit: BoxFit.cover,
+                                errorBuilder: (context, error, stackTrace) =>
+                                const Icon(Icons.image_not_supported),
+                              ),
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                "Photo ${index + 1}",
+                                style: const TextStyle(fontWeight: FontWeight.bold),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ],
                         ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Text(
-                          "Photo ${index + 1}",
-                          style: const TextStyle(fontWeight: FontWeight.bold),
-                          textAlign: TextAlign.center,
-                        ),
-                      ),
-                    ],
-                  ),
-                );
-              }
+                      );
+                    }
+                  )
+              )
+            ],
           );
         }
     );
